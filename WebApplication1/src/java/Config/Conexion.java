@@ -15,7 +15,7 @@ import java.util.logging.Logger;
  */
 public class Conexion {
     String bd="easypark";
-    String url="jdbc:mysql://localhost:3306/easypark";
+    String url="jdbc:mysql://localhost:3306/easypark?serverTimezone=UTC";
     String user="root";
     String password="";
     String driver="com.mysql.jdbc.Driver";
