@@ -8,6 +8,7 @@ import Config.Conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  *
@@ -34,7 +35,9 @@ public class EmpleadoDAO {
                 em.setPass(rs.getString("Contraseña"));
             }
             
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            return null;
         }
          return em;   
     }

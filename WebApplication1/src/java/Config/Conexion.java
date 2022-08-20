@@ -15,22 +15,21 @@ import java.util.logging.Logger;
  */
 public class Conexion {
     String bd="easypark";
-    String url="jdbc:mysql://localhost:3306/easypark?serverTimezone=UTC";
+    String url="jdbc:mysql://localhost:3306/easypark";
     String user="root";
     String password="";
     String driver="com.mysql.jdbc.Driver";
     Connection cx;
     
-    public Conexion(){
+  
     
-    }
-    
-    public Connection conectar(){
+    public Connection conectar() throws ClassNotFoundException{
         try {
             Class.forName("com.mysql.jdbc.Driver");
             cx=DriverManager.getConnection(url,user,password);
-        } catch (ClassNotFoundException | SQLException e) {
-            System.out.println("NO SE CONECTO A LA BD"+bd);
+            System.out.println("si SE CONECTO A LA BD "+bd);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
         }
         return cx;
     }
@@ -45,7 +44,7 @@ public class Conexion {
     
     public static void main (String[] args){
         Conexion conexion=new Conexion();
-        conexion.conectar();
+//        conexion.conectar();
     }
     
 }

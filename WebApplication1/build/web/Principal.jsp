@@ -4,6 +4,9 @@
     Author     : juang
 --%>
 
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.List"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -30,9 +33,19 @@
                     </tr>
 
                 </thead>
-
+         
                 <tbody>
-
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                         
+                    </tr>
+                  
                 </tbody>
             </table>
                 </div>
