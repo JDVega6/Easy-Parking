@@ -20,7 +20,7 @@ public class EmpleadoDAO {
     PreparedStatement ps;
     ResultSet rs;
     
-    public Empleado validar(String user,String pass){
+    public Empleado validar(String user,String pass) throws ClassNotFoundException{
         Empleado em=new Empleado();
         String sql="select * from empleado where User=? and Contraseña=?";
         
@@ -33,6 +33,8 @@ public class EmpleadoDAO {
             while(rs.next()){
                 em.setUser(rs.getString("User"));
                 em.setPass(rs.getString("Contraseña"));
+                em.setNombre(rs.getString("Nombre"));
+                em.setApellido(rs.getString("Apellido"));
             }
             
         } catch (SQLException e) {

@@ -31,7 +31,7 @@
                             <input type="password" name="txtpass" class="form-control">
                         </div>
                         <input type="submit" name="accion" value="Ingresar" class="btn btn-primary btn-block">
-                        <a href="Principal.jsp">Principal</a>
+                        
                     </form>
                 </div>
             </div>

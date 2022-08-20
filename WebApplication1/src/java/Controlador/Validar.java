@@ -12,6 +12,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -68,8 +70,13 @@ public class Validar extends HttpServlet {
         if(accion.equalsIgnoreCase("Ingresar")){
                 String user=request.getParameter("txtuser");
                 String pass=request.getParameter("txtpass");
+            try {
                 em=edao.validar(user, pass);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Validar.class.getName()).log(Level.SEVERE, null, ex);
+            }
                 if(em.getUser()!=null){
+                    request.setAttribute("usuario", em);
                     request.getRequestDispatcher("Controlador?accion=Principal").forward(request, response);
                 }
                 else{

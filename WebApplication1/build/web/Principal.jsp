@@ -16,40 +16,46 @@
         <title>Easy Parking</title>
     </head>
     <body>
-        <h1 class="text-center">Registro Vehiculos</h1>
-        <div class="container">
-            <div class="table-responsive">
-            <table border="1" class="table">
-                <thead>
-                    <tr class="text-center">
-                        <th >idVehiculo</th>
-                        <th>idEmpleado</th>
-                        <th>Placa</th>
-                        <th>Hora Entrada</th>
-                        <th>Hora Salida</th>
-                        <th>Costo</th>
-                        <th>Tipo de vehiculo</th>
+        <nav class="navbar navbar-expand-lg bg-dark">
+  <div class="container-fluid">
+    
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a style="margin-left:10px; border: none" class="btn btn-outline-warning btn-lg" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a style="margin-left:10px; border: none" class="btn btn-outline-warning btn-lg" href="#">Parking</a>
+              </li>
+              <li class="nav-item">
+                  <a style="margin-left:10px; border: none" class="btn btn-outline-warning btn-lg" href="#">Dashboard</a>
+              </li>
+          </ul>
+          
+      
+    </div>
+      
+      <div class="dropdown">
+          <button style="border: none; margin-right: 20px" class="btn btn-outline-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              ${usuario.getNombre()} 
+          </button>
 
-                    </tr>
+          <div  class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">
+                  <img src="img/user.png" alt="User" widht="60" height="60"/>
+              </a>
+              <a class="dropdown-item" href="#">${usuario.getUser()}</a>
+              <a class="dropdown-item" href="#">User</a>
+              <div class="dropdown-divider"></div>
+              <form action="Validar" method="POST">
+                  <button name="accion" value="Salir" class="dropdown-item" href="#">Salir</button>    
+              </form>
 
-                </thead>
-         
-                <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                         
-                    </tr>
-                  
-                </tbody>
-            </table>
-                </div>
-        </div>
+          </div>
+      </div>
+    
+  </div>
+</nav>
         
         
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
