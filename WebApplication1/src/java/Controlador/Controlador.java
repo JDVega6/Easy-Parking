@@ -19,15 +19,35 @@ public class Controlador extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                String accion=request.getParameter("accion");
-                switch(accion){
-                    case "Principal":
-                        request.getRequestDispatcher("Principal.jsp").forward(request, response);
-                        break;
-                    
-                    default:
-                        throw new AssertionError();
+            String menu=request.getParameter("menu");
+            String accion=request.getParameter("accion");
+                if(menu.equalsIgnoreCase("Principal")){
+//                    switch (accion) {
+//                        case "listar":
+//                            
+//                            break;
+//                            
+//                        case "agregar":
+//                            
+//                            break;
+//                            
+//                        case "editar":
+//                            
+//                            break;
+//                          
+//                        case "eliminar":
+//                            
+//                            break;
+//                        default:
+//                            throw new AssertionError();
+//                    }
+                    request.getRequestDispatcher("Principal.jsp").forward(request, response);
                 }
+                if(menu.equalsIgnoreCase("Home")){
+                    request.getRequestDispatcher("RegistroVehiculos.jsp").forward(request, response);
+                }
+                
+                
     }
 
   
